@@ -71,6 +71,11 @@ body{
    display: flex;
    display: flex;
    flex-direction: row;
+   transition: 0.3s;
+}
+
+.listItem:hover{
+    transform: scale(1.1);
 }
 
 .listItem img{
@@ -87,4 +92,14 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+.link-book{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
 }

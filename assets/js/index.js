@@ -17,13 +17,15 @@ function handleSubmit(e){
         console.log(books)
 
         books.forEach(book => {
-            let listItem = `<li class="listItem">
-                                <img src="${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : 'https://i.pinimg.com/222x/b4/9e/7a/b49e7a7298b855f8bf2cd3f5923ea7ab.jpg'}">
-                                <div class="infos-book">
-                                    <strong>${book.volumeInfo.title}</strong>
-                                    <p>${book.volumeInfo.description ? formatDescription(book.volumeInfo.description) : ''}</p>
-                                </div>
-                            </li>`
+            let listItem = `<a href="${book.volumeInfo.canonicalVolumeLink}" target="_blank" class="link-book">
+                                <li class="listItem">
+                                    <img src="${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : 'https://i.pinimg.com/222x/b4/9e/7a/b49e7a7298b855f8bf2cd3f5923ea7ab.jpg'}">
+                                    <div class="infos-book">
+                                        <strong>${book.volumeInfo.title}</strong>
+                                        <p>${book.volumeInfo.description ? formatDescription(book.volumeInfo.description) : ''}</p>
+                                    </div>
+                                </li>
+                            </a>`
 
             listItems += listItem
         })
